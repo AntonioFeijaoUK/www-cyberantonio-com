@@ -1,0 +1,18 @@
+
+# Theme sourced from https://github.com/pages-themes/hacker
+
+remote_theme: pages-themes/hacker
+#remote_theme: pages-themes/hacker@v0.2.0
+#theme: jekyll-theme-hacker
+
+plugins:
+- jekyll-remote-theme # add this line to the plugins list if you already have one
+
+
+title: Azinhaga.Digital
+
+description: Azinhaga, a small village in the middle of Santarem, Portugal, where, sometimes, talents grows.
+
+show_downloads: false
+
+#google_analytics: [Your Google Analytics tracking ID]
