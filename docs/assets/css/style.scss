@@ -2,3 +2,16 @@
 ---
 
 @import "{{ site.theme }}";
+
+body {
+  background: $body-background url("/assets/images/graham-holtshausen-fUnfEz3VLv4-unsplash-medium.jpeg") no-repeat fixed center;
+  background-size: cover;
+  
+  /* background: bg-color bg-image position/bg-size bg-repeat bg-origin bg-clip bg-attachment initial|inherit; */
+  /* https://www.w3schools.com/cssref/css3_pr_background.asp */
+  
+  /* background: $body-background no-repeat; */
+  /* background: $body-background fixed;     */
+  /* background: $body-background center;    */ 
+  /* background: $body-background cover;     */
+}
