@@ -4,8 +4,13 @@
 @import "{{ site.theme }}";
 
 body {
-  background: $body-background url("/assets/images/graham-holtshausen-fUnfEz3VLv4-unsplash-medium.jpeg") no-repeat fixed center;
+  background: $body-background url("/assets/images/nahil-naseer-xljtGZ2-P3Y-unsplash-medium.jpeg") no-repeat fixed center;
   background-size: cover;
+  
+  /* Add the blur effect */
+  /* lernt from here https://www.w3schools.com/howto/howto_css_blurred_background.asp */
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
   
   /* background: bg-color bg-image position/bg-size bg-repeat bg-origin bg-clip bg-attachment initial|inherit; */
   /* https://www.w3schools.com/cssref/css3_pr_background.asp */
