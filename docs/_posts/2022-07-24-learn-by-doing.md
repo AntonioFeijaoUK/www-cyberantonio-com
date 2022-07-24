@@ -17,7 +17,8 @@ Sometimes I need to pause.... to rest, for family 3> <3 :) :D to process!
 
 
 ![The piramid of talent](https://www.iberdrola.com/documents/20125/1234602/Piramide_Talento_ENG.jpg)
-[image source](https://www.iberdrola.com/talent/learning-by-doing)
+
+* [image source](https://www.iberdrola.com/talent/learning-by-doing)
 
 
 ----
