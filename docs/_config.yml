@@ -1,8 +1,8 @@
 # Theme sourced from https://github.com/pages-themes/hacker
 
-#remote_theme: pages-themes/hacker
+remote_theme: pages-themes/hacker
 #remote_theme: pages-themes/hacker@v0.2.0
-theme: jekyll-theme-hacker
+#theme: jekyll-theme-hacker
 
 title: "Cyber Antonio"
 
