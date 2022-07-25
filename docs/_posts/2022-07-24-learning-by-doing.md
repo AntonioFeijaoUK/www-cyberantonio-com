@@ -3,6 +3,7 @@ layout: post
 title:  "Learning by doing"
 categories: ["learning", "website", "exploring"]
 tags: ["curious", "evolving", "open-mind"]
+excerpt_separator: <!--more-->
 ---
 
 # Learning by doing
@@ -14,6 +15,8 @@ That's probably I have so much to do!
 Sometimes I need to pause.... to rest, for family 3> <3 :) :D to process and get ready to learn more!
 
 Remember, listening and reflect are very important!
+
+Feeling inspired? See the images below for <!--more--> some inspiration.
 
 ----
 
