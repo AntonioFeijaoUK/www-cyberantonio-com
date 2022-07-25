@@ -1,22 +1,42 @@
 # Theme sourced from https://github.com/pages-themes/hacker
 
-remote_theme: pages-themes/hacker
+#remote_theme: pages-themes/hacker
 #remote_theme: pages-themes/hacker@v0.2.0
-#theme: jekyll-theme-hacker
+theme: jekyll-theme-hacker
 
-plugins:
-- jekyll-remote-theme # add this line to the plugins list if you already have one
+title: "Cyber Antonio"
 
-
-title: Cyber Antonio
-
-description: Page to find out what I am going to do with it.
+description: "Page to find out what I am going to do with it."
 
 show_downloads: false
 
 #google_analytics: [Your Google Analytics tracking ID]
 
-autor: Antonio Feijao UK
+autor: "Antonio Feijao UK"
+
+author:
+  name   : "Antonio Feijao"
+  avatar : "/assets/images/Antonio-Feijao-Genomics-headshot-35-square_small.jpeg"
+  bio    : "AWS Security and Infrastructure Architect @GenomicsEngland"
+  links:
+    - label: "Website"
+      icon: "fas fa-fw fa-link"
+      url: "https://www.antoniofeijao.com"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/antoniofeijaouk"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/AntonioFeijaoUK"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/AntonioFeijaoUK"
+    - label: "Instagram"
+      icon: "fab fa-fw fa-instagram"
+      url: "https://instagram.com/AntonioFeijaoUK"
+    - label: "Buy-me-a-Coffee"
+      icon: "fa fa-coffee"
+      url: "https://ko-fi.com/antoniofeijaouk"
 
 search: true
 
@@ -34,3 +54,4 @@ plugins:
   - jekyll-feed
   - jemoji
   - jekyll-include-cache
+#  - jekyll-remote-theme # add this line to the plugins list if you already have one
