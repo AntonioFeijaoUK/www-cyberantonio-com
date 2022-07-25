@@ -12,10 +12,8 @@ show_downloads: false
 
 #google_analytics: [Your Google Analytics tracking ID]
 
-autor: "Antonio Feijao UK"
-
 author:
-  name   : "Antonio Feijao"
+  name   : "Antonio Feijao UK"
   avatar : "/assets/images/Antonio-Feijao-Genomics-headshot-35-square_small.jpeg"
   bio    : "AWS Security and Infrastructure Architect @GenomicsEngland"
   links:
