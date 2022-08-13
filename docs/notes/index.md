@@ -1,11 +1,11 @@
 ---
-title: "Home"
+title: "notes"
 # search:
 #   exclude: true
 
-hide:
-  - navigation
-  - toc
+# hide:
+#   - navigation
+#   - toc
   #- footer
 ---
 
@@ -44,9 +44,10 @@ hide:
 </style>
 
 <div class="hero-text">
-    <h1 style="font-size:2.0rem;"><strong>CyberAntonio.com</strong></h1>
-    <h2>learning by doing</h2>
-    <p>all opinions are my own</p>
+    <h1 style="font-size:2.0rem;">
+        <strong>CyberAntonio.com</strong><br>
+        personal notes</h1>
+        <h2>all opinions are my own</2>
 </div>
 
 <div class="hero-image"></div>

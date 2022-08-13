@@ -1,0 +1,112 @@
+# Project information
+site_name: CyberAntonio.com
+site_url: https://www.cyberantonio.com/
+site_author: Antonio Feijao UK
+site_description: >-
+  Cyber Antonio, personal website with cyber security study notes.
+  Learning by doing, linux, it security, networking, containers, aws, cloud, pen-testing, and more...
+
+
+# Copyright
+copyright: Copyright &copy; 2022, <a href="https://www.antoniofeijao.com/">Antonio Feijao UK</a>. Todos os direitos reservados.
+
+theme:
+  name: material
+  logo: /assets/images/background/close-up-of-green-leaves-on-blurred-leaf-background-free-photo.jpeg
+  features:
+    #- navigation.instant
+    - navigation.tracking
+    - content.code.annotate
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.indexes
+    - navigation.top
+    - toc.follow
+  highlightjs: true
+  hljs_languages:
+      - yaml
+  shortcuts:
+      help: 72     # h ###help: 191    # ?
+      next: 78     # n
+      previous: 80 # p
+      search: 83   # s
+  navigation_depth: 4
+  language: en
+  palette: 
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      name: "color-scheme-light"
+      scheme: default
+      primary: black
+      accent: deep orange
+      toggle:
+        icon: material/lightbulb
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      name: "color-scheme-dark"
+      scheme: slate
+      primary: black
+      accent: deep orange
+      toggle:
+        icon: material/lightbulb-outline
+        name: Switch to light mode
+  # font:
+  #   text: Roboto
+  #   code: Roboto Mono
+
+#extra_css:
+#  - /assets/css/extra.css
+
+#extra_javascript:
+#   - /assets/js/extra.js
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/antoniofeijaouk
+    - icon: fontawesome/brands/twitter 
+      link: https://twitter.com/AntonioFeijaoUK
+    - icon: fontawesome/brands/github
+      link: https://github.com/AntonioFeijaoUK
+    - icon: fontawesome/brands/instagram
+      link: https://instagram.com/AntonioFeijaoUK
+      
+# plugins:
+#   - search:
+#     # lang: en
+#   - git-revision-date-localized:
+#       enable_creation_date: iso_datetime
+#       type: date
+#       enable_creation_date: true
+#       fallback_to_build_date: true
+  
+  
+
+# Extensions
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - attr_list
+  - md_in_html
+  - admonition
+  - pymdownx.details
+
+
+## Page tree
+# nav:
+#   - Home: index.md
+#   - Contact: contact.md
+#   - About: about.md
+#   # - sample:
+  #   - eventos/index.md
+  #   - exemplo-evento-1: eventos/exemplo-evento-1/index.md
+  #   - exemplo-evento-2: eventos/exemplo-evento-2/index.md
+  #   - exemplo-evento-3: eventos/exemplo-evento-3/index.md
+  #   - exemplo-evento-4: eventos/exemplo-evento-4/index.md
+  

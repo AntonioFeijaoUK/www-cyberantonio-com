@@ -1,5 +1,5 @@
 ---
-title: "Home"
+title: "About"
 # search:
 #   exclude: true
 
@@ -45,8 +45,9 @@ hide:
 
 <div class="hero-text">
     <h1 style="font-size:2.0rem;"><strong>CyberAntonio.com</strong></h1>
-    <h2>learning by doing</h2>
-    <p>all opinions are my own</p>
+    <h2>This is a personal website with study notes<br>
+    My opinions are my own</h2>
+
 </div>
 
 <div class="hero-image"></div>
