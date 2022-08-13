@@ -44,10 +44,9 @@ hide:
 </style>
 
 <div class="hero-text">
-    <h1 style="font-size:2.0rem;"><strong>CyberAntonio.com</strong></h1>
-    <h2>This is a personal website with study notes<br>
-    My opinions are my own</h2>
-
+    <h1 style="font-size:2.0rem;"><strong>CyberAntonio.com</strong></br>
+    personal website</h1>
+    <h2>opinions are my own</h2>
 </div>
 
 <div class="hero-image"></div>

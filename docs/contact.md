@@ -44,9 +44,7 @@ hide:
 </style>
 
 <div class="hero-text">
-    <h1 style="font-size:2.0rem;"><strong>CyberAntonio.com</strong></h1>
-    <h2> hello AT cyberantonio.com</h2>
-
+    <h1 style="font-size:2.0rem;">hello AT cyberantonio.com</h1>
 </div>
 
 <div class="hero-image"></div>

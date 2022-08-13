@@ -1,5 +1,5 @@
 ---
-title: "notes"
+title: "metasploit"
 # search:
 #   exclude: true
 
@@ -45,7 +45,7 @@ title: "notes"
 
 <div class="hero-text">
     <h1 style="font-size:2.0rem;"><strong>CyberAntonio.com</strong></br>
-    personal notes</h1>
+    metasploit</h1>
     <h2>opinions are my own</h2>
 </div>
 

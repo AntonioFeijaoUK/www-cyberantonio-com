@@ -3,9 +3,9 @@ site_name: CyberAntonio.com
 site_url: https://www.cyberantonio.com/
 site_author: Antonio Feijao UK
 site_description: >-
-  Cyber Antonio, personal website with cyber security study notes.
+  CyberAntonio.com is a personal website with cyber security study notes.
   Learning by doing, linux, it security, networking, containers, aws, cloud, pen-testing, and more...
-
+  Opinions are my own.
 
 # Copyright
 copyright: Copyright &copy; 2022, <a href="https://www.antoniofeijao.com/">Antonio Feijao UK</a>. Todos os direitos reservados.
