@@ -1,5 +1,5 @@
 ---
-title: "notes"
+title: "quotes"
 # search:
 #   exclude: true
 
@@ -11,7 +11,7 @@ title: "notes"
 
 <div class="hero-text">
     <h1 style="font-size:2.0rem;"><b>CyberAntonio.com</b></br>
-    personal notes</h1>
+    quotes</h1>
     <h2>opinions are my own</h2>
 </div>
 

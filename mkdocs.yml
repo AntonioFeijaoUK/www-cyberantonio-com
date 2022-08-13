@@ -57,8 +57,8 @@ theme:
   #   code: Roboto Mono
   font: false
 
-#extra_css:
-#  - /assets/css/extra.css
+extra_css:
+  - /assets/css/hero-text-with-background-image.css
 
 #extra_javascript:
 #   - /assets/js/extra.js
