@@ -7,12 +7,13 @@ hide:
 #   - footer
 ---
 
-## immersive labs
+## by immersive labs
 
-To stand prepared against an ever evolving threat landscape, your organization needs an increasingly skilled cyber workforce.
-Immersive Labs’ unique approach to human cyber readiness moves you beyond generic training courses and certifications to interactive skills content that’s directly relevant to the risks you face.
+> To stand prepared against an ever evolving threat landscape, your organization needs an increasingly skilled cyber workforce.
+>
+> Immersive Labs’ unique approach to human cyber readiness moves you beyond generic training courses and certifications to interactive skills content that’s directly relevant to the risks you face.  
 
-know more about [immersivelabs.com](https://www.immersivelabs.com/)
+visit [immersivelabs.com](https://www.immersivelabs.com/) to learn more
 
 ---
 

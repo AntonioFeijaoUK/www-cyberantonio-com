@@ -1,12 +1,22 @@
 body {
-    background-image: url("/assets/images/background/toa-heftiba-DUXACn8tgp4-unsplash-medium.jpg");
+    /* background-image: url("/assets/images/background/rosie-sun-1L71sPT5XKc-unsplash-medium.jpg"); */
+    background-image:
+        /* top, transparent black, faked with gradient */
+        linear-gradient(rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.7)),
+        /* bottom, image */
+        /* url("/assets/images/background/philipp-katzenberger-jVx8JaO2Ddc-unsplash.jpg"); */
+        /* url("/assets/images/background/rosie-sun-1L71sPT5XKc-unsplash-medium.jpg"); */
+        /* url("/assets/images/background/nasa-rTZW4f02zY8-unsplash-medium.jpg"); */
+        url("/assets/images/background/pawel-czerwinski-prMn9KINLtI-unsplash-medium.jpg");
+
     /*background-color: #cccccc;*/
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    -webkit-backdrop-filter: blur(50px);
-    backdrop-filter: blur(58px);
+    -webkit-backdrop-filter: blur(28px);
+    backdrop-filter: blur(28px);
     /* background-color: black; */
     /* color: white; */
 }
