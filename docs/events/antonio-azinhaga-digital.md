@@ -1,6 +1,15 @@
-# antonio-at-azinhaga-digital
-
 ---
+title: antonio-at-azinhaga-digital
+# search:
+#   exclude: true
+
+# hide:
+#   - navigation
+#   - toc
+#- footer
+---
+
+antonio notes for event at azinhaga-digital
 
 ## gel
 

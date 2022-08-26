@@ -6,7 +6,7 @@ title: "events"
 # hide:
 #   - navigation
 #   - toc
-  #- footer
+#    - footer
 ---
 
 <div class="hero-text">
