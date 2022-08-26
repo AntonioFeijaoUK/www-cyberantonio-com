@@ -3,9 +3,9 @@ title: antonio-at-azinhaga-digital
 # search:
 #   exclude: true
 
-# hide:
-#   - navigation
-#   - toc
+hide:
+  - navigation
+  - toc
 #- footer
 ---
 
