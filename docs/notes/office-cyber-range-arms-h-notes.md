@@ -285,7 +285,11 @@ hashcat -O -m 300 -a 3 --increment --increment-min 1 --increment-max 12 hash-thi
 hashcat -O -m 300 -a 3 --increment --increment-min 1 --increment-max 12 hash-this.txt ?l?u?d?l?u?d?l?u?d?l?u?d?l?u?d?l?u?d?l?u?d?l?u?d?l?u?d?l?u?d?l?u?d?l?u?d
 
 hashcat -O -m 300 -a 3 hash-this.txt
+
+
 ```
+
+<https://www.percona.com/blog/2020/06/12/brute-force-mysql-password-from-a-hash/>
 
 <https://github.com/kkrypt0nn/wordlists>
 
