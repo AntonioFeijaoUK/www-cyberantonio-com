@@ -1,14 +1,14 @@
 # Project information
-site_name: CyberAntonio.com
+site_name: CyberAntonio.com, Antonio Feijao UK, cyber security learning by doing
 site_url: https://www.cyberantonio.com/
 site_author: Antonio Feijao UK
 site_description: >-
-  CyberAntonio.com is a personal website with cyber security study notes.
-  Learning by doing, linux, it security, networking, containers, aws, cloud, pen-testing, and more...
+  CyberAntonio.com is Antonio Feijao UK personal website with cyber security study notes.
+  Learning by doing, linux, it security, networking, containers, aws, cloud, pen-testing, and more.
   Opinions are my own.
 
 # Copyright
-copyright: Copyright &copy; 2022, <a href="https://www.antoniofeijao.com/">Antonio Feijao UK</a>. Todos os direitos reservados.
+copyright: Copyright &copy; 2022, <a href="https://www.antoniofeijao.com/">Antonio Feijao UK</a>. All rights reserved.
 
 theme:
   name: material
@@ -23,6 +23,7 @@ theme:
     - navigation.indexes
     - navigation.top
     - toc.follow
+    - toc.integrate
   highlightjs: true
   hljs_languages:
       - yaml
