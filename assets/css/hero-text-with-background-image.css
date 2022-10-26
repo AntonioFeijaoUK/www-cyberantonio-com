@@ -1,0 +1,44 @@
+body {
+    /* background-image: url("/assets/images/background/rosie-sun-1L71sPT5XKc-unsplash-medium.jpg"); */
+    background-image:
+        /* top, transparent black, faked with gradient */
+        linear-gradient(rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.7)),
+        /* bottom, image */
+        /* url("/assets/images/background/philipp-katzenberger-jVx8JaO2Ddc-unsplash.jpg"); */
+        /* url("/assets/images/background/rosie-sun-1L71sPT5XKc-unsplash-medium.jpg"); */
+        /* url("/assets/images/background/nasa-rTZW4f02zY8-unsplash-medium.jpg"); */
+        url("/assets/images/background/pawel-czerwinski-prMn9KINLtI-unsplash-medium.jpg");
+
+    /*background-color: #cccccc;*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    -webkit-backdrop-filter: blur(28px);
+    backdrop-filter: blur(28px);
+    /* background-color: black; */
+    /* color: white; */
+}
+
+.hero-image {
+    /*background-image: url("/assets/images/background/close-up-of-green-leaves-on-blurred-leaf-background-free-photo.jpeg");*/
+    /*# image source http://www.eugostodesantarem.pt/*/
+    height: 20vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    /*background-color: rgba(155, 155, 155, 0.1);*/
+    /*webkit-backdrop-filter: blur(5px);*/
+    /*backdrop-filter: blur(8px);*/
+
+}
+
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

