@@ -1,5 +1,5 @@
 # Project information
-site_name: CyberAntonio.com, Antonio Feijao UK, cyber security learning by doing
+site_name: CyberAntonio.com, Antonio Feijao UK, Cyber Security learning by doing
 site_url: https://www.cyberantonio.com/
 site_author: Antonio Feijao UK
 site_description: >-
@@ -58,8 +58,8 @@ theme:
   #   code: Roboto Mono
   font: false
 
-extra_css:
-  - /assets/css/hero-text-with-background-image.css
+#extra_css:
+#  - /assets/css/hero-text-with-background-image.css
 
 #extra_javascript:
 #   - /assets/js/extra.js
