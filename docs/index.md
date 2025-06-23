@@ -18,8 +18,8 @@ hide:
 <div class="hero-image"></div>
 
 
-<div
-  class="cf-turnstile"
-  data-sitekey="0x4AAAAAABh-b-ks_shO7wZt"
-  data-callback="javascriptCallback"
-></div>
+
+<!-- The following line controls and configures the Turnstile widget. -->
+<div class="cf-turnstile" data-sitekey="0x4AAAAAABh-b-ks_shO7wZt" data-theme="light"></div>
+<!-- end. -->
+
