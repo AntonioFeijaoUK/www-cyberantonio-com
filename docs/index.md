@@ -20,6 +20,20 @@ hide:
 
 
 <!-- The following line controls and configures the Turnstile widget. -->
-<div class="cf-turnstile" data-sitekey="0x4AAAAAABh-b-ks_shO7wZt" data-theme="light"></div>
+<div style="display: block; flex-flow: row;">
+  <div
+    class="cf-turnstile"
+    data-sitekey="0x4AAAAAABh-b-ks_shO7wZt"
+    data-size="compact"
+  ></div>
+</div>
+
+<script
+  src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback"
+  defer
+></script>
 <!-- end. -->
+
+
+
 
