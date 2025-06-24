@@ -99,8 +99,9 @@ button {
     <label for="msg">Message:</label>
     <textarea id="msg" name="user_message"></textarea>
   </p>
-
-
+  <p>
+    <button type="submit">Send</button>
+  </p>
   <!-- The following line controls and configures the Turnstile widget. -->
 <div style="display: block; flex-flow: row;">
   <div
