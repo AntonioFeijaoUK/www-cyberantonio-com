@@ -17,7 +17,7 @@ hide:
 
 
 
-
+<!--
 <style>
   body {
   /* Center the form on the page */
@@ -99,6 +99,7 @@ button {
     <label for="msg">Message:</label>
     <textarea id="msg" name="user_message"></textarea>
   </p>
+-->
 
   <!-- The following line controls and configures the Turnstile widget. -->
 <div style="display: block; flex-flow: row;">
