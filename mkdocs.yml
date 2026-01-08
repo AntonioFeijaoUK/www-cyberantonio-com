@@ -8,7 +8,10 @@ site_description: >-
   Opinions are my own.
 
 # Copyright
-copyright: Copyright &copy; 2025, <a href="https://www.antoniofeijao.com/">Antonio Feijao UK</a>. All rights reserved.
+copyright: Copyright &copy; <a href="https://www.antoniofeijao.com/">Antonio Feijao UK</a>. All rights reserved.
+
+include:
+  - ".well-known"
 
 theme:
   name: material
